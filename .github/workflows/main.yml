@@ -12,13 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      - name: Listing files
-        run: ls -al
-      - name: display variable
-        run: echo ${{ env.VARIABLE_NAME }}
-      - name: Use a Secret
-        env:
-          SUPER_SECRET: ${{ secrets.SECRET_NAME }}
-        run: echo $SUPER_SECRET
+      - name: Install dependencies
+        run: composer install
+      - name: Run tests
+        run: ./vendor/bin/phpunit
