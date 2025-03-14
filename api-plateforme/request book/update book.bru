@@ -1,0 +1,19 @@
+meta {
+  name: update book
+  type: http
+  seq: 2
+}
+
+patch {
+  url: http://localhost:8000/api/books/1
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/merge-patch+json
+}
+
+body:json {
+  {"title": "The Hitchhikers Guide to the Galaxy", "author": "Douglas Adams", "year": "1980"}
+}

@@ -1,0 +1,32 @@
+meta {
+  name: update graphql
+  type: graphql
+  seq: 4
+}
+
+post {
+  url: {{url}}/graphql
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  mutation {
+    createBook(
+      input: {
+        title: "The Great Gatsby"
+        author: "F. Scott Fitzgerald"
+        year: "1925"
+        category: "/api/categories/4"
+      }
+    ) {
+      book {
+        title
+        author
+        category {
+          name
+        }
+      }
+    }
+  }
+}

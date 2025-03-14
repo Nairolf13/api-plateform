@@ -1,0 +1,20 @@
+meta {
+  name: post book
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/api/books
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+        "title": "The Restaurant at the End of the Universe",
+        "author": "Douglas Adams",
+        "year": "1980",
+        "category": "/api/categories/4"
+      }
+}

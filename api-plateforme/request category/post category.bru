@@ -1,0 +1,17 @@
+meta {
+  name: post category
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/api/categories
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+        "name": "Science Fiction"
+      }
+}

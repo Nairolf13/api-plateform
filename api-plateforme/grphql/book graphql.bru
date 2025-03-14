@@ -1,0 +1,24 @@
+meta {
+  name: book graphql
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{url}}/graphql
+  body: graphql
+  auth: inherit
+}
+
+body:graphql {
+  query {
+    books {
+      edges {
+        node {
+          title
+          author
+        }
+      }
+    }
+  }
+}
